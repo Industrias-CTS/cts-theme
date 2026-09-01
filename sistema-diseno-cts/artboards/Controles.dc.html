@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&amp;display=swap">
+  <style>
+    body { margin: 0; font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a2236; background: #f0f4f9; -webkit-font-smoothing: antialiased; }
+    a { color: #0065BB; } a:hover { color: #004696; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 1440px; height: 1080px; background: #f0f4f9; padding: 40px 48px; display: flex; flex-direction: column; gap: 24px; overflow: hidden;">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;">
+  <div style="display: flex; flex-direction: column; gap: 4px;">
+    <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: #0065BB;">Sistema de Diseño CTS</span>
+    <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.5px; color: #1a2236;">Controles</h1>
+    <span style="font-size: 14px; color: #5a6a80;">Botones, inputs, chips, tabs, menús, tooltips y diálogos</span>
+  </div>
+  <span style="font-size: 11px; color: #5a6a80; font-family: monospace; padding-bottom: 6px;">ctsTheme.ts:123-368</span>
+</div><section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Botones</span><div style="display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap;">
+  <div style="height: 36px; padding: 0 16px; border-radius: 8px; background: #0065BB; color: #fff; font-size: 13.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,101,187,0.3);">Contained</div>
+  <div style="height: 36px; padding: 0 16px; border-radius: 8px; background: #004696; color: #fff; font-size: 13.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,101,187,0.4);">Hover</div>
+  <div style="height: 36px; padding: 0 16px; border-radius: 8px; background: #29ABE2; color: #fff; font-size: 13.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(41,171,226,0.3);">Secondary</div>
+  <div style="height: 36px; padding: 0 16px; border-radius: 8px; background: #ffffff; color: #5a6a80; font-size: 13.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; border: 1.5px solid #d0d8e4;">Outlined</div>
+  <div style="height: 36px; padding: 0 16px; border-radius: 8px; background: #ffffff; color: #0065BB; font-size: 13.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; border: 1.5px solid #0065BB;">Outlined hover</div>
+  <div style="height: 28px; padding: 0 12px; border-radius: 8px; background: #ffffff; border: 1.5px solid #d0d8e4; color: #5a6a80; font-size: 13px; font-weight: 600; display: flex; align-items: center;">small · 4px 12px</div>
+  <div style="height: 34px; padding: 0 16px; border-radius: 99px; background: rgba(0,101,187,0.07); border: 1px solid rgba(0,101,187,0.3); color: #0065BB; font-size: 13.5px; font-weight: 700; display: flex; align-items: center;">Píldora / enlace</div>
+</div>
+<span style="font-size: 12px; color: #5a6a80;">Siempre <span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">textTransform: none</span> · peso 600 · radio 8 · transición <span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">all 0.2s</span>. El contained es el único elemento sólido con sombra.</span></section>
+<section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Inputs (outlined, el único variant)</span><div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;">
+  <div style="width: 210px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 11px; font-weight: 600; color: #5a6a80;">Default — 1.5px #d0d8e4</span><div style="height: 40px; border: 1.5px solid #d0d8e4; border-radius: 8px; background: #ffffff; padding: 0 12px; display: flex; align-items: center; font-size: 13px; color: #5a6a80; ">Valor</div></div>
+  <div style="width: 210px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 11px; font-weight: 600; color: #5a6a80;">Hover — borde primario</span><div style="height: 40px; border: 1.5px solid #0065BB; border-radius: 8px; background: #ffffff; padding: 0 12px; display: flex; align-items: center; font-size: 13px; color: #5a6a80; ">Valor</div></div>
+  <div style="width: 210px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 11px; font-weight: 600; color: #5a6a80;">Focus — anillo 3px</span><div style="height: 40px; border: 1.5px solid #0065BB; border-radius: 8px; background: #ffffff; padding: 0 12px; display: flex; align-items: center; font-size: 13px; color: #5a6a80; box-shadow: 0 0 0 3px rgba(0,101,187,0.15);">Valor</div></div>
+  <div style="width: 210px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 11px; font-weight: 600; color: #5a6a80;">Toolbar — 32px · 13px</span><div style="height: 40px; border: 1.5px solid #d0d8e4; border-radius: 8px; background: #ffffff; padding: 0 12px; display: flex; align-items: center; font-size: 13px; color: #5a6a80; height: 32px;">Valor</div></div>
+</div></section>
+<div style="display: flex; gap: 24px; align-items: flex-start;">
+  <div style="flex: 1.2; display: flex; flex-direction: column; gap: 24px;"><section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Chips y badges</span><div style="display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; align-items: center;">
+  <div style="height: 24px; padding: 0 10px; border-radius: 6px; background: rgba(0,101,187,0.1); color: #0065BB; font-size: 12px; font-weight: 600; display: flex; align-items: center;">Chip 24px</div>
+  <div style="height: 20px; padding: 0 8px; border-radius: 6px; background: #00c87520; color: #00c875; font-size: 11px; font-weight: 700; display: flex; align-items: center;">conteo 20px</div>
+  <div style="height: 18px; padding: 0 8px; border-radius: 6px; background: #fdab3d; color: #fff; font-size: 10.5px; font-weight: 700; display: flex; align-items: center;">BETA</div>
+  <div style="height: 20px; padding: 0 9px; border-radius: 99px; background: #e2445c; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 0.4px; display: flex; align-items: center;">NUEVO</div>
+  <span style="font-size: 12px; color: #5a6a80;">tinte = color + sufijo 20/18 hex · texto en el color pleno</span>
+</div></section><section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Tabs — subrayado 2px sobre línea 2px</span><div style="display: flex; border-bottom: 2px solid #dde3ec;">
+  <div style="padding: 8px 12px; margin-bottom: -2px; font-size: 13px; font-weight: 700; color: #0065BB; border-bottom: 2px solid #0065BB;">Activa</div>
+  <div style="padding: 8px 12px; margin-bottom: -2px; font-size: 13px; font-weight: 500; color: #5a6a80;">Inactiva</div>
+  <div style="padding: 8px 12px; margin-bottom: -2px; font-size: 13px; font-weight: 500; color: #5a6a80; background: rgba(0,101,187,0.05); border-radius: 4px 4px 0 0;">Hover</div>
+</div></section></div>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 24px;"><section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Menú contextual</span><div style="width: 220px; background: #ffffff; border: 1px solid #dde3ec; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,101,187,0.15); padding: 4px 0;">
+  <div style="margin: 2px 6px; padding: 7px 10px; border-radius: 6px; font-size: 13px; color: #1a2236;">Elemento de menú</div>
+  <div style="margin: 2px 6px; padding: 7px 10px; border-radius: 6px; font-size: 13px; color: #1a2236; background: rgba(0,101,187,0.05);">Hover</div>
+  <div style="margin: 2px 6px; padding: 7px 10px; border-radius: 6px; font-size: 13px; color: #e2445c;">Destructivo</div>
+</div></section></div>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 24px;"><section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Tooltips</span><div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+  <div style="background: #1a2236; color: #fff; font-size: 12px; font-weight: 500; border-radius: 6px; padding: 5px 10px;">Tooltip — fondo #1a2236, flecha</div>
+  <div style="background: #ffffff; color: #1a2236; font-size: 13px; line-height: 1.55; border: 1px solid #e0e7ef; border-left: 3px solid #0065BB; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,101,187,0.12); padding: 10px 14px; max-width: 300px;">Variante rica: superficie clara con riel de marca a la izquierda, para explicaciones largas.</div>
+</div></section></div>
+</div>
+<section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Diálogo</span><div style="width: 340px; background: #ffffff; border-radius: 14px; box-shadow: 0 24px 64px rgba(0,101,187,0.18); overflow: hidden;">
+  <div style="padding: 16px 20px 8px 20px; font-size: 16px; font-weight: 700; color: #1a2236;">Título del diálogo</div>
+  <div style="padding: 4px 20px 16px 20px; font-size: 14px; color: #5a6a80;">Cuerpo 14px. Radio 14 (24 en diálogos destacados).</div>
+  <div style="display: flex; justify-content: flex-end; gap: 8px; padding: 0 20px 18px 20px;">
+    <div style="height: 32px; padding: 0 14px; border-radius: 8px; color: #5a6a80; font-size: 13px; font-weight: 600; display: flex; align-items: center;">Cancelar</div>
+    <div style="height: 36px; padding: 0 16px; border-radius: 8px; background: #0065BB; color: #fff; font-size: 13.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,101,187,0.3); height: 32px;">Confirmar</div>
+  </div>
+</div></section>
+</div>
+</x-dc>
+</body>
+</html>

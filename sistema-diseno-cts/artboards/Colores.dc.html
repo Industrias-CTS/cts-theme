@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&amp;display=swap">
+  <style>
+    body { margin: 0; font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a2236; background: #f0f4f9; -webkit-font-smoothing: antialiased; }
+    a { color: #0065BB; } a:hover { color: #004696; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 1440px; height: 1280px; background: #f0f4f9; padding: 40px 48px; display: flex; flex-direction: column; gap: 24px; overflow: hidden;">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;">
+  <div style="display: flex; flex-direction: column; gap: 4px;">
+    <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: #0065BB;">Sistema de Diseño CTS</span>
+    <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.5px; color: #1a2236;">Colores</h1>
+    <span style="font-size: 14px; color: #5a6a80;">Marca, superficie, semánticos, datos y estados</span>
+  </div>
+  <span style="font-size: 11px; color: #5a6a80; font-family: monospace; padding-bottom: 6px;">ctsTheme.ts:4-49</span>
+</div><section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Marca</span><div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;"><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #0065BB; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#0065BB</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">primary.main</span>
+    <span style="font-size: 11px; color: #5a6a80;">azul CTS — acciones, rail, énfasis</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #004696; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#004696</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">primary.dark</span>
+    <span style="font-size: 11px; color: #5a6a80;">hover de contained</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #29ABE2; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#29ABE2</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">primary.light / secondary</span>
+    <span style="font-size: 11px; color: #5a6a80;">acentos fríos, info</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #1a8ab8; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#1a8ab8</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">secondary.dark</span>
+    <span style="font-size: 11px; color: #5a6a80;">hover de secondary</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #003B8E; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#003B8E</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">blueGrad1</span>
+    <span style="font-size: 11px; color: #5a6a80;">declarado, sin uso — no usar</span>
+  </div>
+</div></div></section>
+<section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Superficie y texto (modo claro)</span><div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;"><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #f0f4f9; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #1a2236; font-family: monospace;">#f0f4f9</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">background.default</span>
+    <span style="font-size: 11px; color: #5a6a80;">fondo de aplicación</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #ffffff; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #1a2236; font-family: monospace;">#ffffff</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">background.paper</span>
+    <span style="font-size: 11px; color: #5a6a80;">cards, menús, diálogos</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #dde3ec; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #1a2236; font-family: monospace;">#dde3ec</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">divider</span>
+    <span style="font-size: 11px; color: #5a6a80;">hairline universal</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #d0d8e4; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #1a2236; font-family: monospace;">#d0d8e4</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">borde de inputs</span>
+    <span style="font-size: 11px; color: #5a6a80;">fieldset 1.5px</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #1a2236; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#1a2236</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">text.primary</span>
+    <span style="font-size: 11px; color: #5a6a80;">texto principal</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #5a6a80; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#5a6a80</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">text.secondary</span>
+    <span style="font-size: 11px; color: #5a6a80;">etiquetas, texto de apoyo</span>
+  </div>
+</div></div></section>
+<div style="display: flex; gap: 24px; align-items: flex-start;">
+  <section style="flex-grow: 1; background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Semánticos</span><div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;"><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #e2445c; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#e2445c</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">error.main</span>
+    <span style="font-size: 11px; color: #5a6a80;">errores, eliminar</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #fdab3d; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#fdab3d</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">warning.main</span>
+    <span style="font-size: 11px; color: #5a6a80;">avisos, badges beta</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #00c875; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#00c875</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">success.main</span>
+    <span style="font-size: 11px; color: #5a6a80;">éxito, aprobar</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #29ABE2; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#29ABE2</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">info.main</span>
+    <span style="font-size: 11px; color: #5a6a80;">informativo</span>
+  </div>
+</div></div></section>
+</div>
+<section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Paleta de datos — reservada para contenido del usuario (estados, grupos, tableros, gráficos), nunca para chrome</span><div style="display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap;"><div style="width: 118px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #0065BB; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#0065BB</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">data-1</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 118px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #29ABE2; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#29ABE2</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">data-2</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 118px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #00c875; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#00c875</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">data-3</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 118px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #fdab3d; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#fdab3d</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">data-4</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 118px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #e2445c; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#e2445c</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">data-5</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 118px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #a25ddc; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#a25ddc</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">data-6</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 118px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #ff642e; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#ff642e</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">data-7</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 118px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #579bfc; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#579bfc</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">data-8</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div></div></section>
+<section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Estados de interacción</span><div style="border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;"><div style="display: grid; grid-template-columns: 220px 320px 1fr; background: #0065BB;"><div style="padding: 9px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #ffffff; border-right: 1px solid rgba(255,255,255,0.12);">Token</div><div style="padding: 9px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #ffffff; border-right: 1px solid rgba(255,255,255,0.12);">Valor (claro)</div><div style="padding: 9px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #ffffff; border-right: 1px solid rgba(255,255,255,0.12);">Uso</div></div><div style="display: grid; grid-template-columns: 220px 320px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">action.hover</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">rgba(0,101,187,0.05)</span></div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">hover de filas y superficies</div></div><div style="display: grid; grid-template-columns: 220px 320px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">action.selected</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">rgba(0,101,187,0.1)</span></div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">selección, chips activos</div></div><div style="display: grid; grid-template-columns: 220px 320px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">hover de fila de tabla</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">#f7fafd</span></div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">sólido a propósito (celdas sticky)</div></div><div style="display: grid; grid-template-columns: 220px 320px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">celda de solo lectura</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">rgba(15,23,42,0.035)</span></div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">tinte de bloqueo</div></div><div style="display: grid; grid-template-columns: 220px 320px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">fallback de estado</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">#c4c4c4</span></div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">status sin valor</div></div></div></section>
+</div>
+</x-dc>
+</body>
+</html>

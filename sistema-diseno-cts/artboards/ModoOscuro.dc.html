@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&amp;display=swap">
+  <style>
+    body { margin: 0; font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a2236; background: #f0f4f9; -webkit-font-smoothing: antialiased; }
+    a { color: #0065BB; } a:hover { color: #004696; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 1440px; height: 1100px; background: #f0f4f9; padding: 40px 48px; display: flex; flex-direction: column; gap: 24px; overflow: hidden;">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;">
+  <div style="display: flex; flex-direction: column; gap: 4px;">
+    <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: #0065BB;">Sistema de Diseño CTS</span>
+    <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.5px; color: #1a2236;">Modo oscuro</h1>
+    <span style="font-size: 14px; color: #5a6a80;">Equivalencias y reglas — el papel es más claro que el fondo (elevación invertida)</span>
+  </div>
+  <span style="font-size: 11px; color: #5a6a80; font-family: monospace; padding-bottom: 6px;">ctsTheme.ts:17-49</span>
+</div><section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Superficie y texto (modo oscuro)</span><div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;"><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #2A3547; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#2A3547</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">background.default</span>
+    <span style="font-size: 11px; color: #5a6a80;">fondo de aplicación</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #253662; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#253662</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">background.paper</span>
+    <span style="font-size: 11px; color: #5a6a80;">cards — MÁS CLARO que el fondo</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #2d3c53; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#2d3c53</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">cabecera de tabla / grupo</span>
+    <span style="font-size: 11px; color: #5a6a80;">superficies de grid</span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #e8edf4; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #1a2236; font-family: monospace;">#e8edf4</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">text.primary</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #a6b4c8; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #1a2236; font-family: monospace;">#a6b4c8</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">text.secondary</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #253662; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#253662</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">sidebar (rail)</span>
+    <span style="font-size: 11px; color: #5a6a80;">sustituye al azul de marca</span>
+  </div>
+</div></div></section>
+<section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Semánticos (oscuro)</span><div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;"><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #ef4444; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#ef4444</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">error.main</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #f59e0b; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#f59e0b</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">warning.main</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #22c55e; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#22c55e</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">success.main</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div><div style="width: 150px; border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;">
+  <div style="height: 52px; background: #06b6d4; display: flex; align-items: flex-end; padding: 6px 10px;"><span style="font-size: 11px; font-weight: 700; color: #ffffff; font-family: monospace;">#06b6d4</span></div>
+  <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;">
+    <span style="font-size: 12.5px; font-weight: 700; color: #1a2236;">info.main</span>
+    <span style="font-size: 11px; color: #5a6a80;"></span>
+  </div>
+</div></div></section>
+<section style="background: #ffffff; border: 1px solid #dde3ec; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a6a80;">Reglas del modo oscuro</span><div style="border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; background: #ffffff;"><div style="display: grid; grid-template-columns: 300px 1fr; background: #0065BB;"><div style="padding: 9px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #ffffff; border-right: 1px solid rgba(255,255,255,0.12);">Regla</div><div style="padding: 9px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #ffffff; border-right: 1px solid rgba(255,255,255,0.12);">Valor</div></div><div style="display: grid; grid-template-columns: 300px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">primary.main NO cambia</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">#0065BB</span> en ambos modos</div></div><div style="display: grid; grid-template-columns: 300px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">divider / bordes</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">rgba(74,144,226,0.12)</span> — azul translúcido, no gris</div></div><div style="display: grid; grid-template-columns: 300px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">borde de inputs</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">rgba(74,144,226,0.25)</span> · hover <span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">rgba(41,171,226,0.5)</span></div></div><div style="display: grid; grid-template-columns: 300px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">action.hover / selected</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">rgba(74,144,226,0.08)</span> / <span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">rgba(74,144,226,0.16)</span></div></div><div style="display: grid; grid-template-columns: 300px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">hover de fila</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">#2f435e</span> · selección <span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">#2f476d</span></div></div><div style="display: grid; grid-template-columns: 300px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">sombras</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">negras, más profundas: elev1 <span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">0 1px 4px rgba(0,0,0,0.4)</span></div></div><div style="display: grid; grid-template-columns: 300px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">backgroundImage</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">none</span> en Paper/Card/Dialog (MUI añade gradiente por defecto)</div></div><div style="display: grid; grid-template-columns: 300px 1fr;"><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;">scrollbars</div><div style="padding: 8px 12px; font-size: 13px; color: #1a2236; border-right: 1px solid #dde3ec; border-bottom: 1px solid #dde3ec; display: flex; align-items: center; min-height: 38px;"><span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">#3d4f6f</span> sobre <span style="font-family: monospace; font-size: 12px; background: #f0f4f9; border: 1px solid #dde3ec; border-radius: 4px; padding: 1px 6px;">#253662</span></div></div></div></section>
+</div>
+</x-dc>
+</body>
+</html>

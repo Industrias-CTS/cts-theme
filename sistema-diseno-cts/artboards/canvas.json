@@ -1,0 +1,88 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Portada",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "Colores.dc.html",
+      "title": "1 · Colores",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1280
+    },
+    {
+      "file": "ModoOscuro.dc.html",
+      "title": "2 · Modo oscuro",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 1100
+    },
+    {
+      "file": "Tipografia.dc.html",
+      "title": "3 · Tipografía",
+      "x": 0,
+      "y": 1440,
+      "w": 1440,
+      "h": 1240
+    },
+    {
+      "file": "FormaEspacio.dc.html",
+      "title": "4 · Forma y espacio",
+      "x": 1560,
+      "y": 1440,
+      "w": 1440,
+      "h": 1460
+    },
+    {
+      "file": "Controles.dc.html",
+      "title": "5 · Controles",
+      "x": 3120,
+      "y": 1440,
+      "w": 1440,
+      "h": 1080
+    },
+    {
+      "file": "TablasListas.dc.html",
+      "title": "6 · Tablas y listas",
+      "x": 0,
+      "y": 3060,
+      "w": 1440,
+      "h": 1220
+    },
+    {
+      "file": "Navegacion.dc.html",
+      "title": "7 · Navegación",
+      "x": 1560,
+      "y": 3060,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "Estructura.dc.html",
+      "title": "8 · Estructura (wireframe)",
+      "x": 3120,
+      "y": 3060,
+      "w": 1440,
+      "h": 1560
+    }
+  ],
+  "annotations": [
+    {
+      "id": "uso",
+      "x": 0,
+      "y": -150,
+      "w": 560,
+      "text": "Sistema de Diseño CTS — fuente de verdad: cts-manager (frontend/src/theme/ctsTheme.ts).\nToda aplicación nueva copia estos valores literales; no redondear ni aproximar.\nCada hoja cita el archivo de origen arriba a la derecha."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
