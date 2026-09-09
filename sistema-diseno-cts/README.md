@@ -1,12 +1,9 @@
-# Sistema de Diseño CTS
+# Sistema Visual CTS
 
-Guía visual de tokens y componentes para que todas las aplicaciones de
-Industrias CTS (W-Flow, E-Panel y siguientes) compartan la misma base de
-estilos. **Fuente de verdad:** `cts-manager/frontend/src/theme/ctsTheme.ts`.
+UI Framework para vistas y componentes, siguiendo un _standard_ que se ha creado paulatinamente.
 
-- **Lienzo publicado (Claude Design):**
-  https://claude.ai/code/artifact/c6735804-7f9c-4f31-ac8c-090a11b5e0ef
-- **Cómo ver / regenerar el diseño:** [COMO-VER-EL-DISENO.md](COMO-VER-EL-DISENO.md)
+- [**Lienzo publicado (Claude Design)**](https://teams.cloud.microsoft/l/message/19:c31ded52-4d88-4f75-9533-c181d4827182_fee3e0e6-554b-4b6b-b290-ed88318743cc@unq.gbl.spaces/1788971885405?context=%7B%22contextType%22%3A%22chat%22%7D)
+- [**Cómo ver / regenerar el diseño**](COMO-VER-EL-DISENO.md)
 
 ## Hojas
 
@@ -20,7 +17,7 @@ estilos. **Fuente de verdad:** `cts-manager/frontend/src/theme/ctsTheme.ts`.
 8. **Navegación** — rail azul 256px con estados exactos, acciones flotantes, migas
 9. **Estructura (wireframe)** — shell numerado 1–10, leyenda y variantes de vista (listado, detalle con panel, editor de lienzo)
 
-## Estructura
+## Guía Interactiva
 
 ```
 sistema-diseno-cts/
@@ -32,13 +29,13 @@ sistema-diseno-cts/
 └── artboards/                # hojas .dc.html + canvas.json (salida de build.py)
 ```
 
-## Flujo de actualización
+### Flujo de actualización
 
 1. Editar `build.py` (los tokens están al inicio, cada hoja cita su archivo fuente).
 2. `python3 build.py` regenera `artboards/`.
 3. Desde Claude Code con `/design`, re-sembrar y guardar al mismo enlace.
 
-## Regla de oro
+### Regla de oro
 
 Copiar los valores **literales** — hex, radios, alturas, alfas — sin redondear
 ni aproximar. Si un valor no está aquí, buscarlo en el código de cts-manager y
