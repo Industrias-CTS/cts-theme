@@ -2,7 +2,7 @@
 
 UI Framework para vistas y componentes, siguiendo un _standard_ que se ha creado paulatinamente.
 
-- [**Lienzo publicado (Claude Design)**](https://teams.cloud.microsoft/l/message/19:c31ded52-4d88-4f75-9533-c181d4827182_fee3e0e6-554b-4b6b-b290-ed88318743cc@unq.gbl.spaces/1788971885405?context=%7B%22contextType%22%3A%22chat%22%7D)
+- [**Lienzo publicado (Claude Design)**](https://claude.ai/code/artifact/b77faf03-ed66-4420-8f40-256fdef58e53)
 - [**Cómo ver / regenerar el diseño**](COMO-VER-EL-DISENO.md)
 
 ## Hojas
