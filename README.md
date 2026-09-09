@@ -16,6 +16,10 @@ propio `README.md`:
   colores, tipografía, forma y espacio, controles, tablas, navegación y
   estructura (wireframe numerado). Lienzo publicado:
   https://claude.ai/code/artifact/c6735804-7f9c-4f31-ac8c-090a11b5e0ef
+- **[wireframes-epanel/](wireframes-epanel/)** — wireframes numerados de Login,
+  Inicio, Proyectos → Tablero, Selección de equipos y Diseñar cuadro, con la
+  numeración de la hoja Estructura aplicada a E-Panel. Lienzo publicado:
+  https://claude.ai/code/artifact/b77faf03-ed66-4420-8f40-256fdef58e53
 
 Cuando se agregue un diseño nuevo (una app, una vista, una exploración), crear
 una subcarpeta hermana (`nombre-del-diseño/`) con la misma estructura:
