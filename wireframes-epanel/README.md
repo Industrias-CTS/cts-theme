@@ -2,7 +2,7 @@
 
 Wireframes numerados de las vistas clave de E-Panel, usando la misma
 numeración fija de la hoja **8 · Estructura** del
-[Sistema de Diseño CTS](../sistema-diseno-cts/) — para socializar con el
+[Sistema de Diseño CTS](../docs/demo/) — para socializar con el
 equipo dónde va cada cosa antes de maquetar en alta fidelidad.
 
 - **Lienzo publicado (Claude Design):**

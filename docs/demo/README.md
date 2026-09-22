@@ -20,7 +20,7 @@ UI Framework para vistas y componentes, siguiendo un _standard_ que se ha creado
 ## Guía Interactiva
 
 ```
-sistema-diseno-cts/
+docs/demo/
 ├── build.py                 # generador: una función v_* por hoja, tokens en cabecera
 ├── README.md
 ├── COMO-VER-EL-DISENO.md    # cómo ejecutar y ver el diseño

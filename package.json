@@ -1,5 +1,58 @@
 {
-	"dependencies": {
-		"@mui/material": "^9.4.0"
+	"name": "@industriascts/cts-theme",
+	"version": "0.1.0",
+	"description": "Sistema de Diseño CTS: tokens, colores y tema MUI para las aplicaciones de Industrias CTS",
+	"license": "UNLICENSED",
+	"private": true,
+	"type": "module",
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./colors": {
+			"types": "./dist/colors.d.ts",
+			"default": "./dist/colors.js"
+		},
+		"./tokens": {
+			"types": "./dist/tokens.d.ts",
+			"default": "./dist/tokens.js"
+		},
+		"./mui": {
+			"types": "./dist/mui/theme.d.ts",
+			"default": "./dist/mui/theme.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.json",
+		"clean": "rm -rf dist",
+		"typecheck": "tsc -p tsconfig.check.json",
+		"typecheck:mui6": "tsc -p tsconfig.check.mui6.json",
+		"typecheck:mui7": "tsc -p tsconfig.check.mui7.json",
+		"typecheck:mui9": "tsc -p tsconfig.check.json",
+		"typecheck:matrix": "pnpm typecheck:mui6 && pnpm typecheck:mui7 && pnpm typecheck:mui9"
+	},
+	"peerDependencies": {
+		"@mui/material": "^6 || ^7 || ^9",
+		"react": "^18 || ^19"
+	},
+	"devDependencies": {
+		"@emotion/react": "^11.14.0",
+		"@emotion/styled": "^11.14.1",
+		"@mui/material": "^9.4.0",
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
+		"mui6": "npm:@mui/material@^6.5.0",
+		"mui7": "npm:@mui/material@^7.3.11",
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8",
+		"typescript": "^5.9.3"
 	}
 }

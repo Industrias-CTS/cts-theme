@@ -43,7 +43,7 @@ debe existir junto a `build.py`.
 Desde Claude Code, en esta carpeta:
 
 1. Invocar `/design` y pedir: *"re-siembra el Sistema de Diseño CTS desde
-   ~/Documentos/cts-theme/sistema-diseno-cts/artboards y actualiza el lienzo
+   ~/.projects/cts-theme/docs/demo/artboards y actualiza el lienzo
    existente"* (el enlace de arriba).
 2. Claude re-siembra `sistema-diseno-cts.html` con todos los artboards +
    `canvas.json` + logo y lo guarda **al mismo enlace** (no crear uno nuevo).
