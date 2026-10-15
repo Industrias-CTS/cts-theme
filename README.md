@@ -14,6 +14,7 @@ y siguientes).
 - `src/mui/theme.ts` — `createCtsTheme(mode)`; `augmentation.ts` expone los tokens como `theme.cts` dentro de cualquier `sx`
 - [**INSTRUCCIONES-COMPONENTES.md**](docs/INSTRUCCIONES-COMPONENTES.md) — especificación de los 13 componentes de layout (zonas 1–10)
 - [**MOBILE-TBD.md**](docs/MOBILE-TBD.md) — lo que el sistema todavía no define para móvil
+- [**ESTILADO-Y-CONSUMO.md**](docs/ESTILADO-Y-CONSUMO.md) — métodos de estilado de MUI y todas las formas de inyectar cts-theme en un proyecto MUI (ejemplos sin probar)
 
 ```bash
 pnpm build             # tsc → dist/
