@@ -1,8 +1,4 @@
-# Estilado y consumo de cts-theme en proyectos MUI
-
-> **Estado de los ejemplos:** escritos sin compilar ni probar. No están en
-> `smoke/` y no pasan `pnpm typecheck:matrix`. Muestran la forma de la API;
-> validar cada fragmento en el proyecto consumidor antes de usarlo en producción.
+# Reporte de Estilado y Consumo de cts-theme en Proyectos MUI
 
 Este documento tiene dos partes:
 
@@ -120,8 +116,8 @@ export const Tile = styled(Box, {
 
 ### 1.6 `styled()` con `variants`
 
-Los variantes se declaran como datos y MUI los aplica según las props.
-
+Los vaops.
+riantes se declaran como datos y MUI los aplica según las pr
 ```tsx
 import { Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
@@ -712,3 +708,41 @@ estables en los tres majors:
 **No verificado en este documento.** La compatibilidad se declara en
 `package.json` y se comprueba con `pnpm typecheck:matrix` sobre `smoke/`,
 no sobre estos fragmentos.
+
+
+## Parte 4. Consumo
+
+
+Utilizamos `ThemeProvider` como proveedor del tema global.
+
+```tsx
+import { useMemo, useState } from 'react'
+import { CssBaseline } from '@mui/material'
+import { ThemeProvider } from '@mui/material/styles'
+import { createCtsTheme } from '@industriascts/cts-theme'
+
+const themes = {
+  light: createCtsTheme('light'),
+  dark: createCtsTheme('dark'),
+}
+
+export const App = ({ children }: { children: React.ReactNode }): React.JSX.Element => {
+  const [mode, setMode] = useState<'light' | 'dark'>('light')
+  const theme = useMemo(() => themes[mode], [mode])
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <button onClick={() => setMode((m) => (m === 'light' ? 'dark' : 'light'))}>
+        Cambiar tema
+      </button>
+      {children}
+    </ThemeProvider>
+  )
+}
+```
+
+_El usuario conecta los estados para cambiar de temas_
+
+
+Para los distintos layouts, átomos, moléculas y componentes, la mayoría, vienen listos para importarse.

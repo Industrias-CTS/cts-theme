@@ -89,6 +89,16 @@ compartirlo para que otros lo abran).
 coincide con cts-manager hoy. La deriva está en espaciado, tipografía y
 movimiento (D15).
 
+### Conclusiones del desarrollador
+
+Podemos observar que 'cts-manager' no tiene un sistema de diseño definido y por tanto, las incompatibilidades, contradicciones, las no generalidades que se encuentren, son obra de un desarrollo que ha sido desaforado y sin una estructura de diseño clara.
+
+Es nuestro deber hacer de esta plétora de colores, roles y componentes, una librería estructurada y escalable, de fácil uso y además optimizable en peso. Estas grandilocuentes metas, que por cierto, pueden llegar a ser fantasiosas, son por ahora, la base de la motivación de este proyecto.
+
+Por eso mismo, una falta de consistencia como la vemos en los pares claro/oscuro, las variaciones en el alpha de varios colores, páginas con una paleta de colores propia y valores indefinidos que usan valores por defecto, son los problemas que debemos resolver desde este proyecto.
+
+Utilizaremos un enfonque en reforzar los colores ideales, _la mayoría_ del tiempo.
+
 ## Capa 1 · Primitivos
 
 ### Existentes
@@ -100,6 +110,15 @@ Los de `src/colors.ts` (`palette`, `surface`, `surfaceDark`, `semantic`,
   fuera del tema. La app usa `#c8c8c8` (×15) y `#c4c4c4` (×9) (D9).
 - `#29ABE2` es a la vez `palette.blueLight`, `secondary.main`,
   `semantic.info` y `data8[1]`: un primitivo, cuatro roles.
+
+#### Notas del desarrollador
+
+* En caso de `palette.grayLight` y `palette.grayDark` no sean usados, entonces se reemplazan por uso real, apuntando a no usar colores primitivos directamente cuando se instancia un componente o se codifica un estilo.
+
+* Como data8 es un arreglo de colores para estados, podemos derivar un nombre y uso adecuado basado en los componentes, dividos en átomos, que los usan. 
+
+* Queda abierta la pregunta al planteamiento de roles y componentes: _¿es ideal usar distintos roles para el mismo color?
+
 
 ### Nuevos (valores observados, a agregar en el paso 2)
 
@@ -1388,6 +1407,17 @@ ancho 300 (real: 15 y 420), y el diálogo destacado con radio 24 (real: 30).
 Cada decisión trae las opciones y una recomendación. Nada marcado con una
 decisión se codifica en el paso 2 hasta tener respuesta. Las recomendaciones
 usan solo valores que ya existen en cts-manager, salvo donde se dice.
+
+#### Notas del desarrollador
+
+Respuestas generales:
+
+  * No usaremos ningún _default_ de MUI
+  * Tomaremos el valor de MUI como primitivo en caso de que sea necesario
+  * Sobreescribiremos cualquier valor por defecto que sea necesario
+
+**D2**: Creación de un rol estándar para los 'outline' de los átomos
+**D3**: 
 
 ### D1 · Un solo «seleccionado»
 
