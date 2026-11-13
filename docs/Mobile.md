@@ -66,3 +66,10 @@ de ancho móvil, igual que las nueve existentes. Después:
 Mientras tanto, cualquier app que necesite móvil **parchea con `sx`** y anota
 aquí qué tuvo que inventar, para que la ratificación parta de datos reales y no
 de cero.
+
+## Adoptado provisionalmente (S2, App-Shell.md)
+
+`AppShell` toma los modos del rail de E-Panel como comportamiento provisional:
+`< md` → `temporary` (Drawer modal) · ≥ md en vertical → `overlay` (franja +
+panel superpuesto con velo) · si no → `push`. El consumidor puede fijar uno con
+`layout`. Sigue pendiente de ratificación de diseño.

@@ -8,6 +8,12 @@ La base ya está construida y verificada: `src/tokens.ts`, `src/colors.ts`,
 `src/mui/theme.ts` + `augmentation.ts`. Ningún componente debe re-declarar un
 valor que ya esté en `tokens.ts`.
 
+> **Actualización (S4):** `AppShell`, la superficie de `NavRail`, el
+> contenedor de `FloatingActions` y `ContentArea` quedaron consolidados en un
+> solo cascarón: `AppShell` desde `@industriascts/cts-theme/views`
+> (`src/views/`, no `src/layout/`). Ver [App-Shell.md](App-Shell.md). Las
+> zonas 2–5, 7, 8 y 10 siguen especificadas aquí y sin código.
+
 ---
 
 ## 0. Reglas del piso

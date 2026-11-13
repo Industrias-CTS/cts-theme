@@ -105,8 +105,24 @@ export const dataColor = (index: number): DataColor =>
  */
 export const tint = (hex: string, alpha: '20' | '18' = '20'): string => hex + alpha
 
+/* ── Autocompletado del login — AuthPage.tsx:66-67 ─────────────────────── *
+ * Chrome pinta los campos autocompletados con su propio fondo; el login lo
+ * reemplaza por estos. No son `text.primary`: se copian literales.          */
+export const authAutofill = {
+  light: { bg: '#e8f0fe', text: '#1a1a1a' },
+  dark:  { bg: '#253662', text: '#ffffff' },
+} as const
+
+/* ── Velos — capas sobre el contenido ──────────────────────────────────── */
+export const scrim = {
+  /** velo bajo el rail en modo overlay — E-Panel Sidebar.styles.ts (overlayBackdropSx) */
+  rail: 'rgba(0,0,0,0.25)',
+} as const
+
+export type Scrim = typeof scrim
 export type Palette = typeof palette
 export type Surface = typeof surface
 export type SurfaceDark = typeof surfaceDark
 export type Semantic = typeof semantic
 export type Secondary = typeof secondary
+export type AuthAutofill = typeof authAutofill

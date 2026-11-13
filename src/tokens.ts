@@ -118,6 +118,10 @@ export const layout = {
   railCollapsedWidth: 0,
   /** zona 1 · alternativa de colapso declarada en la hoja: solo iconos */
   railIconWidth: 64,
+  /** AppLayout.tsx:29 (cts-manager) · franja del botón de reapertura con el rail oculto */
+  reopenStripWidth: 24,
+  /** AppLayout.tsx:34 (cts-manager) · `top` sticky del botón de reapertura */
+  reopenTop: 12,
   /** zona 6 · acciones flotantes, `position: fixed` */
   floatingTop: 16,
   floatingRight: 16,
@@ -205,6 +209,30 @@ export const letterSpacing = {
   wordmark: '2px',
 } as const
 
+/* ── Login — pantalla de acceso (AuthPage.tsx de cts-manager) ───────────── */
+export const login = {
+  /** AuthPage.tsx:75 — `flex: 0 0 45%` del panel de marca */
+  brandPanelBasis: '45%',
+  /** AuthPage.tsx:140 — columna del formulario */
+  formMaxWidth: 420,
+  /** AuthPage.tsx:92-94 — wordmark de la marca */
+  wordmarkSize: 42,
+  wordmarkTracking: 4,
+  /** AuthPage.tsx:102 — descriptor bajo el wordmark */
+  taglineSize: 13,
+  /**
+   * Decisión L4 (2026-11-06): AuthPage usa 0.7 → 3.69:1 sobre `#0065BB`,
+   * bajo el 4.5:1 de WCAG AA. Blanco a 0.83 es el mínimo que pasa sobre
+   * `#0065BB`; 0.85 → 4.70:1 en claro y 8.99:1 sobre `#253662` en oscuro.
+   */
+  taglineOpacity: 0.85,
+  taglineTracking: 1,
+  /** AuthPage.tsx:123 — leyenda del panel de marca */
+  legendSize: 12,
+  /** Decisión L4: AuthPage usa 0.45 → 2.37:1. Mismo valor que el tagline. */
+  legendOpacity: 0.85,
+} as const
+
 /* ── Breakpoints ────────────────────────────────────────────────────────── *
  * PROVISIONAL. El Sistema de Diseño CTS no define móvil todavía; estos son
  * los valores por defecto de MUI, incluidos para que los componentes tengan
@@ -231,6 +259,7 @@ export type Rail = typeof rail
 export type FontSize = typeof fontSize
 export type FontWeight = typeof fontWeight
 export type LetterSpacing = typeof letterSpacing
+export type Login = typeof login
 export type Breakpoints = typeof breakpoints
 
 /** Bolsa única de tokens; se inyecta en el tema MUI como `theme.cts`. */
@@ -247,6 +276,7 @@ export const tokens = {
   fontWeight,
   fontSize,
   letterSpacing,
+  login,
   breakpoints,
   artboardWidth,
 } as const
