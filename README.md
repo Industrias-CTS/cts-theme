@@ -12,9 +12,10 @@ y siguientes).
 - `src/tokens.ts` — radios, bordes, sombras, densidad, animación, layout, rail, tipografía
 - `src/colors.ts` — marca, superficie (claro/oscuro), semánticos, paleta de datos (8)
 - `src/mui/theme.ts` — `createCtsTheme(mode)`; `augmentation.ts` expone los tokens como `theme.cts` dentro de cualquier `sx`
-- [**INSTRUCCIONES-COMPONENTES.md**](docs/INSTRUCCIONES-COMPONENTES.md) — especificación de los 13 componentes de layout (zonas 1–10)
-- [**MOBILE-TBD.md**](docs/MOBILE-TBD.md) — lo que el sistema todavía no define para móvil
-- [**ESTILADO-Y-CONSUMO.md**](docs/ESTILADO-Y-CONSUMO.md) — métodos de estilado de MUI y todas las formas de inyectar cts-theme en un proyecto MUI (ejemplos sin probar)
+- [**INSTRUCCIONES-COMPONENTES.md**](docs/Instrucciones-Componentes.md) — especificación de los 13 componentes de layout (zonas 1–10)
+- [**Mobile.md**](docs/Mobile.md) — lo que el sistema todavía no define para móvil
+- [**Estilado-Consumo.md**](docs/Estilado-Consumo.md) — métodos de estilado de MUI y todas las formas de inyectar cts-theme en un proyecto MUI (ejemplos sin probar)
+- [**Estandares-Globales.md**](docs/Estandares-Globales.md) — auditoría de cts-manager, E-Panel y t-monitor, y propuesta de estándares comunes (decisiones G1–G12)
 
 ```bash
 pnpm build             # tsc → dist/
