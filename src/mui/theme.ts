@@ -1,9 +1,19 @@
 import type { PaletteMode, ThemeOptions } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
-import { palette as P, surface, surfaceDark, semantic, semanticDark, secondary } from '../colors'
-import { tokens, radii, fontFamily, fontWeight, fontSize, letterSpacing, spacing, breakpoints } from '../tokens'
+import type { Shadows } from '@mui/material/styles'
+import { palette as P, surface, surfaceDark, semantic, semanticDark, secondary, brandSurface, action, actionDark } from '../colors'
+import { tokens, radii, elevation, fontFamily, fontWeight, fontSize, letterSpacing, spacing, breakpoints } from '../tokens'
+import { components } from './components'
+import type { CtsProfile } from './components'
 
 import './augmentation'
+
+export type { CtsProfile }
+
+export interface CtsThemeOptions {
+  /** `'app'` (por defecto) o `'hmi'` para pantallas táctiles. Ver docs/Mobile.md. */
+  profile?: CtsProfile
+}
 
 /**
  * 'Helper' para creación de paleta disponible para componentes de MUI
@@ -16,34 +26,20 @@ export const palette = (mode: PaletteMode) => {
 
 	return {
       mode,
-      primary:    { main: P.blue, dark: P.blueDark, light: P.blueLight, contrastText: '#fff' },
-      secondary:  { main: secondary.main, dark: secondary.dark, light: secondary.light, contrastText: '#fff' },
+      primary:    { main: P.blue, dark: P.blueDark, light: P.blueLight, contrastText: brandSurface.text },
+      secondary:  { main: secondary.main, dark: secondary.dark, light: secondary.light, contrastText: brandSurface.text },
       background: isDark
         ? { default: surfaceDark.base, paper: surfaceDark.paper }
         : { default: surface.soft, paper: surface.paper },
       text: isDark
-        ? { primary: surfaceDark.text, secondary: surfaceDark.muted }
-        : { primary: surface.navy, secondary: surface.muted },
+        ? { primary: surfaceDark.text, secondary: surfaceDark.muted, disabled: surfaceDark.textDisabled }
+        : { primary: surface.navy, secondary: surface.muted, disabled: surface.textDisabled },
       divider:    isDark ? surfaceDark.border : surface.border,
       error:   { main: isDark ? semanticDark.error   : semantic.error },
       warning: { main: isDark ? semanticDark.warning : semantic.warning },
       success: { main: isDark ? semanticDark.success : semantic.success },
       info:    { main: isDark ? semanticDark.info    : semantic.info },
-      ...(isDark ? {
-        action: {
-          active:            'rgba(255,255,255,0.6)',
-          hover:             'rgba(74,144,226,0.08)',
-          selected:          'rgba(74,144,226,0.16)',
-          disabled:          'rgba(255,255,255,0.28)',
-          disabledBackground:'rgba(255,255,255,0.08)',
-          focus:             'rgba(74,144,226,0.12)',
-        },
-      } : {
-        action: {
-          hover:    'rgba(0,101,187,0.05)',
-          selected: 'rgba(0,101,187,0.1)',
-        },
-      }),
+      action: isDark ? { ...actionDark } : { ...action },
 	}}
 
 /**
@@ -68,8 +64,8 @@ export const typography = {
   subtitle2: { fontSize: fontSize.dense, fontWeight: fontWeight.semibold },
   body1: { fontSize: fontSize.body, lineHeight: 1.6, fontWeight: fontWeight.regular },
   body2: { fontSize: fontSize.dense, lineHeight: 1.5, fontWeight: fontWeight.regular },
-  button: { fontWeight: fontWeight.semibold, letterSpacing: '0.01em', textTransform: 'none' as const },
-  caption: { fontSize: fontSize.caption, letterSpacing: '0.01em' },
+  button: { fontWeight: fontWeight.semibold, letterSpacing: letterSpacing.control, textTransform: 'none' as const },
+  caption: { fontSize: fontSize.caption, letterSpacing: letterSpacing.control },
   overline: {
     fontSize: fontSize.overline,
     fontWeight: fontWeight.semibold,
@@ -79,32 +75,38 @@ export const typography = {
 }
 
 /**
- * Opciones base del tema CTS, sin `components`.
- *
- * Los overrides de `components` (botones, inputs, chips, tabs, menús,
- * diálogos, tablas — hojas «Controles» y «Tablas y listas») NO están aquí
- * a propósito: los nombres de slot y los `defaultProps` cambian entre MUI 6,
- * 7 y 9, así que son una decisión aparte. Ver INSTRUCCIONES-COMPONENTES.md.
+ * Escala `theme.shadows` de 25 entradas: `none`, cinco niveles y el nivel
+ * superior repetido. ctsTheme.ts `shadows`.
  */
-export const themeOptions = (mode: PaletteMode): ThemeOptions => ({
+export const shadowScale = (mode: PaletteMode): Shadows => {
+  const isDark = mode === 'dark'
+  const steps = isDark ? elevation.dark : elevation.light
+  const top = isDark ? elevation.darkTop : elevation.lightTop
+  return ['none', ...steps, ...Array<string>(19).fill(top)] as Shadows
+}
+
+/**
+ * Opciones completas del tema CTS: paleta, tipografía, forma, sombras,
+ * overrides de componentes (`./components`) y tokens en `theme.cts`.
+ *
+ * Para extenderlo en una app: `createTheme(themeOptions(mode), propias)`.
+ */
+export const themeOptions = (mode: PaletteMode, options: CtsThemeOptions = {}): ThemeOptions => ({
   palette: palette(mode),
   typography,
   shape: { borderRadius: radii.base },
   spacing: spacing.base,
   breakpoints: { values: { ...breakpoints } },
+  shadows: shadowScale(mode),
+  components: components(mode, options.profile),
   cts: tokens,
 })
 
 /**
  * Tema CTS listo para `<ThemeProvider theme={...}>`.
  *
- * Deja `theme.cts` disponible dentro de cualquier `sx`.
+ * Deja `theme.cts` disponible dentro de cualquier `sx`. El perfil `hmi` se
+ * usa en modo oscuro por defecto: `createCtsTheme('dark', { profile: 'hmi' })`.
  */
-export const createCtsTheme = (mode: PaletteMode = 'light') =>
-  createTheme(themeOptions(mode))
-
-/**
- *
- * TODO
- * 	- Conversión de oklch a rgba a hex
- */
+export const createCtsTheme = (mode: PaletteMode = 'light', options: CtsThemeOptions = {}) =>
+  createTheme(themeOptions(mode, options))

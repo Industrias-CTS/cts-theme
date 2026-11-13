@@ -1457,6 +1457,8 @@ versiones.
 
 ### D4 · `text.disabled`
 
+> **Resuelto (2026-11-13, G8 de Estandares-Globales.md):** `#808a99` claro / `#626e81` oscuro, de E-Panel.
+
 **Problema.** 435 usos y el tema no lo define. Se ve `rgba(0, 0, 0, 0.38)` /
 `rgba(255, 255, 255, 0.5)`.
 
@@ -1575,6 +1577,8 @@ siendo `#0065BB` para rellenos.
 
 ### D15 · Deriva de tokens
 
+> **Resuelto en parte (2026-11-13, G11):** `tableHeader` 0.01em, `shadows.paper` y `shadows.buttonSecondaryHover` siguen a cts-manager; el easing único queda en `cubic-bezier(0.32, 0.72, 0, 1)`.
+
 Ver la tabla de deriva. **Recomendación:**
 
 - `letterSpacing.tableHeader` → `'0.01em'`.
@@ -1642,6 +1646,8 @@ aviso, éxito e info) no son literales en cts-manager: MUI los calcula.
 dependen de la fórmula de cada versión de MUI (6, 7 y 9).
 
 ### D22 · Pesos 500 y 800
+
+> **Resuelto (2026-11-13, G5):** no existen en el sistema; 500 → 600 y 800 → 700. El preset de ESLint los rechaza.
 
 **Problema.** `fontWeight` 500 tiene 34 usos (tooltip, alert, migas…) y 800
 se usa en KPI y en el título de novedades; ninguno tiene token. Ojo:

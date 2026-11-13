@@ -180,24 +180,24 @@ export const Marker = ({ x }: { x: number }): React.JSX.Element => (
 )
 ```
 
-### 1.10 `theme.components` / `styleOverrides` — pendiente
+### 1.10 `theme.components` / `styleOverrides`
 
-Permite cambiar por defecto el estilo de un componente MUI (botones, inputs,
-chips, tabs…). **cts-theme no lo define todavía**: `themeOptions` lo deja fuera
-a propósito, porque los nombres de slot cambian entre MUI 6, 7 y 9. Cuando se
-decida, se documentará aquí.
+Define el estilo por defecto de cada componente MUI. **cts-theme ya lo trae**:
+`createCtsTheme` incluye los overrides de `src/mui/components.ts` (Button,
+OutlinedInput, Paper, Card, Table*, Dialog, Tooltip, Chip, Alert,
+ListItemButton, LinearProgress, Menu, MenuItem, Drawer, Divider y
+CssBaseline), copiados de cts-manager y comprobados contra MUI 6, 7 y 9.
 
-Un proyecto consumidor puede hacerlo por su cuenta (ver 2.14), pero queda
-fuera de la garantía del sistema.
+Una app solo agrega lo propio y, para variantes por props, usa `variants`
+(las claves compuestas como `containedPrimary` no existen en MUI 9):
 
 ```tsx
-// Ejemplo del patrón. No es parte de cts-theme.
-import { createCtsTheme } from '@industriascts/cts-theme'
 import { createTheme } from '@mui/material/styles'
+import { themeOptions } from '@industriascts/cts-theme'
 
-export const theme = createTheme(createCtsTheme('light'), {
+export const theme = createTheme(themeOptions('light'), {
   components: {
-    MuiButton: {
+    MuiToggleButton: {
       styleOverrides: {
         root: ({ theme }) => ({ borderRadius: `${theme.cts.radii.control}px` }),
       },
@@ -222,7 +222,7 @@ export const Gutter = (): number => {
 }
 ```
 
-Nota: el valor móvil de `gutter` no está definido (ver `MOBILE-TBD.md`). Este
+Nota: bajo `sm` el gutter es `theme.cts.spacing.gutterCompact` (12); ver `Mobile.md`. Este
 ejemplo muestra la forma, no un valor aprobado.
 
 ### 1.12 `alpha()` para tintes

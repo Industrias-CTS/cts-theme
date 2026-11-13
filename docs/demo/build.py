@@ -79,7 +79,7 @@ def spec(label, value):
             f'<span style="font-size: 13px; font-weight: 600; color: {NAVY}; font-family: monospace;">{value}</span></div>')
 
 def table(headers, rows_, widths=None):
-    ths = "".join(f'<div style="padding: 9px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #ffffff; border-right: 1px solid rgba(255,255,255,0.12);">{h}</div>' for h in headers)
+    ths = "".join(f'<div style="padding: 9px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.01em; text-transform: none; color: #ffffff; border-right: 1px solid rgba(255,255,255,0.12);">{h}</div>' for h in headers)
     cols = widths or f"repeat({len(headers)}, minmax(0, 1fr))"
     trs = ""
     for r in rows_:
@@ -206,7 +206,7 @@ def v_tipografia():
         ["overline", "11px", "600", "tracking 0.08em, uppercase"],
     ], "140px 220px 90px 1fr")
     micro = table(["Contexto", "Especificación"], [
-        ["Cabecera de tabla", "11px · 600 · uppercase · tracking 0.06em · blanco sobre azul"],
+        ["Cabecera de tabla", "11px · 600 · sin mayúsculas · tracking 0.01em · blanco sobre azul"],
         ["Título de sección del sidebar", "10px · 700 · uppercase · tracking 0.1em · opacity 0.45"],
         ["Eyebrow / micro-etiqueta", "11px · 700 · uppercase · tracking 0.32em · color acento"],
         ["Etiqueta de nav", "13.5px · 600"],
@@ -330,7 +330,7 @@ def v_controles():
 
 # ═══ 7. Tablas y listas ═══════════════════════════════════════════════════
 def v_tablas():
-    head = "".join(f'<div style="padding: 9px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; border-right: 1px solid rgba(255,255,255,0.12);">{h}</div>' for h in ["Tarea", "Estado", "Responsable", "Fecha"])
+    head = "".join(f'<div style="padding: 9px 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.01em; text-transform: none; color: #fff; border-right: 1px solid rgba(255,255,255,0.12);">{h}</div>' for h in ["Tarea", "Estado", "Responsable", "Fecha"])
     def cell(t, extra=""):
         return f'<div style="height: 38px; padding: 0 12px; font-size: 13px; color: {NAVY}; border-right: 1px solid {BORDER}; border-bottom: 1px solid {BORDER}; display: flex; align-items: center; {extra}">{t}</div>'
     def status(t, c):
@@ -354,7 +354,7 @@ def v_tablas():
 </div>
 <span style="font-size: 12px; color: {MUTED};">Cabecera de grupo 44px, sticky, riel izquierdo 4px del color del grupo; el color viene de la paleta de datos.</span>"""
     reglas = table(["Regla", "Valor"], [
-        ["Cabecera", f"bg {mono(BLUE)} · texto blanco 11px uppercase 0.06em · pad 9px 12px"],
+        ["Cabecera", f"bg {mono(BLUE)} · texto blanco 11px sin mayúsculas 0.01em · pad 9px 12px"],
         ["Celda", "38px · 13px · padding 0 (el contenido interno se alinea) · bordes " + mono(BORDER)],
         ["Hover de fila", mono("#f7fafd") + " sólido — no rgba (hay celdas sticky encima)"],
         ["Contenedor", "radio 10 + borde; sin sombra"],

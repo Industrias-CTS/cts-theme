@@ -48,8 +48,9 @@ poder citarlos en la discusión.
    ¿scroll horizontal conservando la cabecera azul, o transformación a cards?
 8. **Diálogos.** Radios 14 / 30 px; en móvil suelen ir a pantalla completa
    (donde el radio desaparece). Sin definir.
-9. **Breakpoints.** El sistema no nombra ninguno. `tokens.breakpoints` usa hoy
-   los de MUI (0 / 600 / 900 / 1200 / 1536) marcados como **provisionales**.
+9. ~~**Breakpoints.**~~ Resuelto: se adoptan los de MUI (0 / 600 / 900 /
+   1200 / 1536), que usan sin cambios las tres apps auditadas
+   ([Estandares-Globales.md](Estandares-Globales.md)).
 
 ## Cómo se cierra esto
 
@@ -66,6 +67,33 @@ de ancho móvil, igual que las nueve existentes. Después:
 Mientras tanto, cualquier app que necesite móvil **parchea con `sx`** y anota
 aquí qué tuvo que inventar, para que la ratificación parta de datos reales y no
 de cero.
+
+## Perfil HMI
+
+Resuelve el conflicto 1 para pantallas táctiles fijas (t-monitor en
+Raspberry Pi, kioscos de planta). No es el perfil móvil: es un perfil de
+**densidad táctil** que se activa por app.
+
+```ts
+createCtsTheme('dark', { profile: 'hmi' })
+```
+
+| Qué cambia | Valor | Fuente |
+|---|---|---|
+| Alto mínimo de `Button`, `IconButton`, `ListItemButton`, `MenuItem` y `OutlinedInput` | 48 px (`tokens.touch.minTarget`) | WCAG 2.5.5; teclado virtual de t-monitor, teclas 48-64 |
+| Fila de tabla | 48 px (`tokens.touch.tableRow`) en lugar de 38 | — |
+| `body` | `user-select: none`, `touch-action: manipulation`, sin resaltado al tocar; los campos editables siguen seleccionables | t-monitor `fontStyle.css:44-80` |
+
+Reglas del perfil que el tema no puede imponer y cada app cumple:
+
+- **Oscuro por defecto** (t-monitor ya lo usa así).
+- **Sin `backdrop-filter`** y sin sombras pesadas animadas: rendimiento en
+  Raspberry Pi (t-monitor `VirtualKeyboard.tsx:39`).
+- **Nada que dependa solo del hover**: no hay cursor.
+- Teclado virtual en la capa `tokens.zIndex.keyboard` (1350): por encima de
+  los diálogos y por debajo de los avisos.
+- Estados de equipo con `status.*` y siempre acompañados de texto o icono,
+  nunca solo color.
 
 ## Adoptado provisionalmente (S2, App-Shell.md)
 

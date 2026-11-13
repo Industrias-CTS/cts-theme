@@ -6,6 +6,8 @@
  */
 export * from './colors'
 export * from './tokens'
+export * from './format'
+export { cssVariables, cssText, CSS_PREFIX } from './css'
 
 /**
  * `palette` existe con dos sentidos: los hexes de marca en `./colors` y la
@@ -17,7 +19,10 @@ export {
   palette as muiPalette,
   typography,
   themeOptions,
+  shadowScale,
   createCtsTheme,
 } from './mui/theme'
+export type { CtsProfile, CtsThemeOptions } from './mui/theme'
+export { components as muiComponents } from './mui/components'
 
 import './mui/augmentation'

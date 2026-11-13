@@ -9,9 +9,9 @@
  * `peerDependencies` está respaldado por una comprobación, no por una
  * suposición.
  *
- * Reglas que este archivo respeta a propósito (ver INSTRUCCIONES-COMPONENTES.md):
+ * Reglas que este archivo respeta a propósito (ver docs/Filosofia.md):
  *   - nada de `Grid`   → renombrado en 7, `GridLegacy` eliminado en 9
- *   - nada de `slotProps`/`componentsProps` → consolidados en 7
+ *   - nada de props legados (`componentsProps`, `PaperProps`…) → eliminados en 9
  *   - nada de imports profundos de segundo nivel → eliminados en 7
  *   - nada de `extendTheme`/`CssVarsProvider`/`theme.vars`
  */

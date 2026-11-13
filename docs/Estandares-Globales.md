@@ -1,8 +1,9 @@
-# Estándares globales — auditoría y propuesta
+# Estándares globales — auditoría y decisiones
 
-> **Estado:** propuesta para revisión. No hay código todavía; cada punto marcado
-> **G*n*** es una decisión abierta.
-> **Fecha:** 2026-11-13.
+> **Estado:** decisiones G1–G12 **tomadas** e implementadas en cts-theme
+> (2026-11-13). Falta la adopción en cada app (§4).
+> Reglas resultantes: [Filosofia.md](Filosofia.md). Guía de uso:
+> [Nueva-App.md](Nueva-App.md).
 > **Apps auditadas (solo lectura):**
 >
 > | App | Carpeta | Versión | Stack |
@@ -133,15 +134,34 @@ tiene su propia paleta de 8 colores.
 
 ---
 
-## 2. Propuesta — qué agrega cts-theme
+## 2. Qué agrega cts-theme
 
-En orden de impacto. Cada entrega pasa por `pnpm typecheck:matrix`.
+En orden de impacto. Todo pasa `pnpm check` (tipos contra MUI 6, 7 y 9,
+lint con el propio preset y build).
+
+| § | Implementado en |
+|---|---|
+| 2.1 | `src/mui/components.ts`; `createCtsTheme` lo incluye |
+| 2.2 | `status` / `statusDark` en `src/colors.ts` |
+| 2.3 | `zIndex`, `notify`, `elevation`, `shadowsDark` y `motion.easing` en `src/tokens.ts` |
+| 2.4 | `src/css.ts` → `dist/cts-theme.css` (`@industriascts/cts-theme/css`) |
+| 2.5 | `createCtsTheme(mode, { profile: 'hmi' })`, `tokens.touch` |
+| 2.6 | `src/format.ts` (`@industriascts/cts-theme/format`) |
+| 2.7 | `QueryState`, `DialogHeader`, `NotificationHost` + `useNotify` en `src/views/` |
+| 2.8 | `eslint/index.js` (`@industriascts/cts-theme/eslint`) |
+
+Diferencias deliberadas frente a la copia literal de cts-manager:
+- `Tooltip` y `Alert` usan peso 600 en lugar de 500 (G5).
+- `containedPrimary`, `containedSecondary`, `outlined` y `sizeSmall` se
+  escriben como `variants` de `MuiButton.root`, porque MUI 9 eliminó esas
+  claves. El resultado visual es el mismo.
 
 ### 2.1 Overrides de componentes (`src/mui/components.ts`)
-Es el paso 2 de [Atomos.md](Atomos.md). cts-manager y E-Panel ya coinciden en
+Es el paso 2 de [Atomos.md](Atomos.md). cts-manager y E-Panel coincidían en
 Button, OutlinedInput, Paper, Card, TableCell, TableRow, Dialog, Tooltip, Chip,
 Alert, ListItemButton, LinearProgress, Menu, MenuItem, Drawer y CssBaseline.
-Con esto, ninguna app vuelve a copiar esas 200 líneas.
+Con esto, ninguna app vuelve a copiar esas 200 líneas. Los átomos con
+micro-estados de Atomos.md (D1–D23 pendientes) se construyen encima.
 
 ### 2.2 Roles de estado (`src/status.ts`)
 Es un vocabulario único para estados de proceso y de equipo. Cada estado apunta
@@ -152,12 +172,15 @@ a un rol semántico existente, no a un hex nuevo:
 | `status.ok` | en marcha, energizado, cerrado, aprobado | `semantic.success` | `semanticDark.success` |
 | `status.warning` | en proceso, reconocido, bloqueado | `semantic.warning` | `semanticDark.warning` |
 | `status.fault` | falla, disparado, alarma activa | `semantic.error` | `semanticDark.error` |
-| `status.offline` | fuera de línea, inactivo, abierto | *nuevo, ver G2* | *nuevo* |
+| `status.offline` | fuera de línea, inactivo, abierto | `palette.gray` `#7F7F7F` | `palette.grayLight` `#C9C9C9` |
 | `status.info` | informativo | `semantic.info` | `semanticDark.info` |
-| `status.selected` | selección en lienzos | `palette.blue` | *ver G2* |
+| `status.selected` | selección en lienzos | `palette.blue` | `palette.blueLight` |
+
+En oscuro, `#7F7F7F` da 2.94:1 sobre el papel, debajo del 3:1 que piden los
+gráficos. Por eso se usa `#C9C9C9` (7.47:1).
 
 `cts-hmi-symbols` lo usan E-Panel y t-monitor, así que se alinea en un solo
-lugar. Consumiría estos roles como variables CSS (ver 2.4).
+lugar. Consume estos roles como variables `--cts-status-*` (ver 2.4).
 
 ### 2.3 Escalas que hoy no existen
 - **`zIndex`**: capas con nombre (`sticky`, `floating`, `rail`, `overlay`,
@@ -215,9 +238,11 @@ Los colores de dominio (lienzos maxgraph, three.js, reportes) se eximen con
 
 ---
 
-## 3. Decisiones abiertas
+## 3. Decisiones (tomadas el 2026-11-13)
 
-| # | Decisión | Opciones | Recomendación |
+Se adoptó la recomendación en todas.
+
+| # | Decisión | Opciones | Adoptada |
 |---|---|---|---|
 | **G1** | ¿t-monitor adopta la paleta de cts-manager? Cambia secundario, grises, fondo claro y texto, y se nota en pantalla. | (a) sí, completa · (b) solo marca y semánticos; los grises *slate* quedan como perfil HMI | **(a)**, en una entrega propia validada en pantalla real |
 | **G2** | Valor de `status.offline` y `status.selected` | (a) `palette.gray` `#7F7F7F` y `palette.blue` · (b) primitivos nuevos | **(a)**: ya son primitivos de marca |
@@ -225,7 +250,7 @@ Los colores de dominio (lienzos maxgraph, three.js, reportes) se eximen con
 | **G4** | `body1`: 15 (cts-manager y E-Panel) o 14 (t-monitor) | (a) 15 global · (b) 15 y 14 en el perfil HMI | **(a)**: en HMI la distancia de lectura pide más, no menos |
 | **G5** | Pesos 500, 800 y 900, usados en cts-manager pero no cargados | (a) cargarlos · (b) mapearlos a 600/700 | **(b)**. Coincide con D22 de [Atomos.md](Atomos.md) |
 | **G6** | Prohibición de `slotProps` | (a) mantenerla · (b) permitir `slotProps` en apps y prohibir los props legados | **(b)**. `slotProps` es la API de MUI 7/9, ya hay 216 usos, y los legados son los que se eliminan. La regla de no reenviar slots sigue aplicando a los componentes de cts-theme |
-| **G7** | Rail cerrado: 0 (cts-manager), 64 (E-Panel) u 80 (t-monitor) | `AppShell` ya acepta `collapsedRail` | Mantener la opción y quitar el 80: **64** cuando hay iconos, **0** cuando no |
+| **G7** | Rail cerrado: 0 (cts-manager), 64 (E-Panel) u 80 (t-monitor) | `AppShell` ya acepta `collapsedRail` | **64** con iconos (`collapsedRail='icons'`), **0** sin ellos; el 80 de t-monitor desaparece |
 | **G8** | Paleta paralela `useColors()` de E-Panel | (a) migrar sus roles a cts-theme · (b) dejarla como roles de dominio de E-Panel | **(a)** para roles de interfaz (`textDisabled`, `save`, `topBar`, `onBrand`); **(b)** para `editor` y `dataBoard` |
 | **G9** | `config-generator` en MUI 5 con 141 `Grid` | (a) migrar a MUI 7 antes de adoptar · (b) dejarlo fuera | **(a)**, pero al final del plan |
 | **G10** | `hmi-configurator` sin MUI | (a) adoptar MUI · (b) solo variables CSS | **(b)**: aplicación pequeña y apuntada al hardware |
@@ -251,7 +276,7 @@ producción (regla 00 de `cts-manager/CLAUDE.md`).
 
 En todas las apps: agregar el preset de ESLint (2.8) primero como **warning**.
 Pasa a **error** cuando el conteo de literales de la app baje a cero fuera de
-las carpetas de dominio.
+las carpetas de dominio. Pasos de adopción: [Nueva-App.md](Nueva-App.md).
 
 ---
 
