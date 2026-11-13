@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Inicio" />
+
+# Sistema de Diseño CTS
+
+Catálogo visual de **cts-theme**: los colores, la tipografía, las medidas y
+los componentes que comparten todas las aplicaciones de Industrias CTS
+(cts-manager/W-Flow, E-Panel, t-monitor y las que vengan).
+
+Todo lo que se ve aquí sale del código del paquete (`src/colors.ts`,
+`src/tokens.ts`, `src/mui/`, `src/views/`), así que el catálogo no puede
+quedar desactualizado respecto a lo que usan las apps.
+
+## Cómo navegar
+
+- **Fundamentos** — colores, tipografía, forma y espacio, capas, formato.
+- **Componentes MUI** — cómo quedan los componentes de MUI con el tema CTS.
+- **Componentes CTS** — los compuestos propios del sistema: `QueryState`,
+  `DialogHeader`, notificaciones, `AppShell` y `LoginShell`.
+
+Usa el selector de tema de la barra superior (icono de pincel) para ver cada
+página en **Claro**, **Oscuro** o en el perfil táctil **HMI**.
+
+## Usarlo en una app
+
+```tsx
+import { createCtsTheme } from '@industriascts/cts-theme'
+import { NotificationHost } from '@industriascts/cts-theme/views'
+
+<ThemeProvider theme={createCtsTheme(mode)}>
+  <CssBaseline />
+  <NotificationHost>
+    <App />
+  </NotificationHost>
+</ThemeProvider>
+```
+
+Guía completa: `docs/Nueva-App.md`. Reglas obligatorias: `docs/Filosofia.md`.

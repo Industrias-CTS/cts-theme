@@ -1,7 +1,8 @@
 # Cómo usar cts-theme en una app
 
 Guía para apps nuevas y para migrar las existentes (cts-manager, E-Panel,
-t-monitor). Las reglas que se aplican están en [Filosofia.md](Filosofia.md);
+t-monitor). Para ver cómo se ve cada pieza antes de usarla: `pnpm catalogo`
+en este repo. Las reglas que se aplican están en [Filosofia.md](Filosofia.md);
 el porqué de cada valor, en [Estandares-Globales.md](Estandares-Globales.md).
 
 ## 1. Requisitos

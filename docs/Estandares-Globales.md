@@ -177,7 +177,10 @@ a un rol semántico existente, no a un hex nuevo:
 | `status.selected` | selección en lienzos | `palette.blue` | `palette.blueLight` |
 
 En oscuro, `#7F7F7F` da 2.94:1 sobre el papel, debajo del 3:1 que piden los
-gráficos. Por eso se usa `#C9C9C9` (7.47:1).
+gráficos. Por eso se usa `#C9C9C9` (7.47:1). En claro, `ok` (2.00:1),
+`warning` (1.72:1) e `info` (2.37:1) tampoco llegan a 3:1 sobre el fondo:
+son los semánticos de producción y no se cambian aquí. Por eso un estado
+siempre va con etiqueta o icono.
 
 `cts-hmi-symbols` lo usan E-Panel y t-monitor, así que se alinea en un solo
 lugar. Consume estos roles como variables `--cts-status-*` (ver 2.4).

@@ -7,5 +7,10 @@
 		"sourceMap": false,
 		"rootDir": "."
 	},
-	"include": ["src", "smoke"]
+	"include": [
+		"src",
+		"smoke",
+		"catalogo",
+		".storybook"
+	]
 }

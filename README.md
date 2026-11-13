@@ -11,6 +11,26 @@ Soporta React 18/19 y `MUI ^6 || ^7 || ^9`.
 (cts-manager `frontend/src/theme/ctsTheme.ts` como base; ver
 [Estandares-Globales.md](docs/Estandares-Globales.md)).
 
+## Catálogo visual
+
+```bash
+pnpm install
+pnpm catalogo          # abre en http://localhost:6006
+```
+
+Storybook con todos los colores, la tipografía, las medidas y los
+componentes del sistema, en claro, oscuro y HMI (selector de tema en la barra
+superior). Todo se genera desde el código, así que nunca se desfasa.
+`pnpm catalogo:build` deja el sitio estático en `storybook-static/`.
+
+| Sección | Contenido |
+|---|---|
+| Fundamentos | colores (marca, superficies, semánticos, estados, datos), tipografía, forma y espacio, capas y movimiento, formato |
+| Componentes MUI | botones, campos, tablas, superficies y avisos con el tema CTS |
+| Componentes CTS | `QueryState`, `DialogHeader`, notificaciones, `AppShell`, `LoginShell` |
+
+Las páginas viven en `catalogo/`; la configuración en `.storybook/`.
+
 ## Empezar
 
 - [**Nueva-App.md**](docs/Nueva-App.md) — cómo usar el paquete en una app nueva o migrar una existente
@@ -35,6 +55,7 @@ pnpm build             # tsc → dist/ y dist/cts-theme.css
 pnpm typecheck:matrix  # src + smoke contra MUI 6.5.0, 7.3.11 y 9.4.0
 pnpm lint              # el repo pasa su propio preset
 pnpm check             # las tres cosas
+pnpm catalogo         # catálogo visual (Storybook)
 pnpm dev               # playground con LoginShell y AppShell
 ```
 

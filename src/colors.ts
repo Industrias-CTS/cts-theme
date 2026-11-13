@@ -147,7 +147,12 @@ export const semanticDark = {
  * Vocabulario único para HMI, tableros, alarmas y símbolos (cts-hmi-symbols).
  * Antes había 7 verdes de «OK» entre apps (Estandares-Globales.md §1.4).
  * Cada estado apunta a un semántico o a un primitivo de marca; no hay hex
- * nuevos. Son colores de gráfico (≥ 3:1 contra el fondo), no de texto.     */
+ * nuevos. No son colores de texto.
+ *
+ * Contraste: en oscuro todos pasan 3:1 contra el papel. En claro, `ok`
+ * (2.00:1), `warning` (1.72:1) e `info` (2.37:1) NO llegan a 3:1 sobre el
+ * fondo: son los semánticos de producción de cts-manager. Por eso un estado
+ * nunca va solo en color: siempre con etiqueta o icono (Filosofia.md).     */
 export const status = {
   /** en marcha · energizado · cerrado · aprobado · normal */
   ok:       semantic.success,
